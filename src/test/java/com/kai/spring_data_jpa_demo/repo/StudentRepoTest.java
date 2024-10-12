@@ -56,4 +56,38 @@ class StudentRepoTest {
             System.out.println(s);
         }
     }
+
+    @Test
+    public void printStudentsByFirstname() {
+        List<Student> studentList = studentRepo.findByFirstname("Zukkii");
+
+        for(Student s : studentList) {
+            System.out.println(s);
+        }
+    }
+
+    @Test
+    public void printStudentsByFirstnameContaining() {
+        List<Student> studentList = studentRepo.findByFirstnameContaining("tann");
+
+        for(Student s : studentList) {
+            System.out.println(s);
+        }
+    }
+
+    @Test
+    public void printStudentsBaseOnGuardianName() {
+        List<Student> studentList = studentRepo.findByGuardianName("kai");
+
+        for(Student s : studentList) {
+            System.out.println(s);
+        }
+    }
+
+    @Test
+    public void printStudentBaseOnEmailAddress() {
+        Student student = studentRepo.findStudentByEmailAddress("zukkii@email.com");
+
+        System.out.println(student);
+    }
 }
