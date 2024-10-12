@@ -90,4 +90,27 @@ class StudentRepoTest {
 
         System.out.println(student);
     }
+
+    @Test
+    public void printStudentNameBaseOnEmailAddress() {
+         String firstname = studentRepo.findStudentFirstnameByEmailAddress("titann@email.com");
+
+        System.out.println(firstname);
+    }
+
+    @Test
+    public void printStudentBasedOnLastAndFirstname() {
+        List<Student> studentList = studentRepo.findStudentByLastAndFirstname("Iem", "Titann");
+
+        for (Student s : studentList) {
+            System.out.println(s);
+        }
+    }
+
+    @Test
+    public void printStudentByEmailAddressUsingNativeQuery() {
+        Student student = studentRepo.getStudentByEmailAddressNativeQuery("zukkii@email.com");
+
+        System.out.println(student);
+    }
 }
