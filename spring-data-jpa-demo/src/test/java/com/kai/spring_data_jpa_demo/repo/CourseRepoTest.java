@@ -1,6 +1,7 @@
 package com.kai.spring_data_jpa_demo.repo;
 
 import com.kai.spring_data_jpa_demo.entity.Course;
+import com.kai.spring_data_jpa_demo.entity.Student;
 import com.kai.spring_data_jpa_demo.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,5 +82,30 @@ class CourseRepoTest {
         for (Course c : courses) {
             System.out.println(c);
         }
+    }
+
+    @Test
+    public void saveCourseWithStudentAndTeacher() {
+
+        Teacher teacher = Teacher.builder()
+                .firstname("Kai")
+                .lastname("Iem")
+                .build();
+
+        Student student = Student.builder()
+                .firstname("zukkiii")
+                .lastname("Iem")
+                .emailId("zukkiii@email.com")
+                .build();
+
+        Course course = Course.builder()
+                .title("AI")
+                .credit(3)
+                .teacher(teacher)
+                .build();
+
+        course.addStudents(student);
+
+        courseRepo.save(course);
     }
 }
