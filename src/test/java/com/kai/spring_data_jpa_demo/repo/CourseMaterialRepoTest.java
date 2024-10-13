@@ -24,7 +24,7 @@ class CourseMaterialRepoTest {
                 .build();
 
         CourseMaterial courseMaterial = CourseMaterial.builder()
-                .url("www.google.com")
+                .url("www.kinkin.com")
                 .course(course)
                 .build();
 
