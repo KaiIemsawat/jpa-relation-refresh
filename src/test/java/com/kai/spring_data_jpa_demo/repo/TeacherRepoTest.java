@@ -30,7 +30,7 @@ class TeacherRepoTest {
         Teacher teacher = Teacher.builder()
                 .firstname("Stokii")
                 .lastname("Hampton")
-                .courses(List.of(courseTS, courseJS))
+//                .courses(List.of(courseTS, courseJS))
                 .build();
 
         teacherRepo.save(teacher);
