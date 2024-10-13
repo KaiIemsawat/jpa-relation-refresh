@@ -113,4 +113,19 @@ class StudentRepoTest {
 
         System.out.println(student);
     }
+
+    @Test
+    public void printStudentByEmailUsingNativeQueryNamedParam() {
+        Student student = studentRepo.getStudentByEmailAddressNativeQueryNameParam("zukkii@email.com");
+
+        System.out.println(student);
+    }
+
+    @Test
+    public void updateStudentNameByEmail() {
+        studentRepo.updateStudentNameByEmail(
+                "Titann",
+                "titann@email.com"
+        );
+    }
 }
